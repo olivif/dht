@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DHT", "DHT\DHT.csproj", "{0F00FE6C-CC5A-450A-92DB-33D7A1AA1EDB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DhtCore", "DHT\DhtCore.csproj", "{0F00FE6C-CC5A-450A-92DB-33D7A1AA1EDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DHT.Tests", "DHT.Tests\DHT.Tests.csproj", "{C0DF25D4-AC2C-4453-897F-351BFBB1D059}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DhtTests", "DHT.Tests\DhtTests.csproj", "{C0DF25D4-AC2C-4453-897F-351BFBB1D059}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DhtNode", "DhtNode\DhtNode.csproj", "{83EEF16C-0F94-4BBC-9E0A-50F0A2094BA3}"
 EndProject

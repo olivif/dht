@@ -57,9 +57,9 @@
     <Compile Include="HasherTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DHT\DHT.csproj">
+    <ProjectReference Include="..\DHT\DhtCore.csproj">
       <Project>{0f00fe6c-cc5a-450a-92db-33d7a1aa1edb}</Project>
-      <Name>DHT</Name>
+      <Name>DhtCore</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
