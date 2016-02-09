@@ -18,5 +18,7 @@ Every node is able to store and index multiple pieces of data. It should also be
 ### Hasher
 The hasher is responsible for creating a hash value out of the piece of data provided.
 
+Note that in order to avoid defining a protocol for nodes talking to eachother, currently all nodes are stored in the same process. 
+
 
     
