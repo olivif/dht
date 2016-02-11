@@ -13,23 +13,23 @@ namespace DhtNode
             Console.WriteLine("Validating args");
 
             // Validate number of args
-            if (args.Length == 0)
+            if (args.Length != 2)
             {
-                Console.WriteLine("Invalid number of arguments, please supply a port.");
+                Console.WriteLine("Invalid number of arguments, please supply a port and a node id");
                 Console.WriteLine("Exiting now");
                 return;
             }
 
             // Get arg values
-            string portArg = args[0];
-            int port = int.Parse(portArg);
+            int port = int.Parse(args[0]);
+            int nodeId = int.Parse(args[1]);
 
             // Set host
             string hostName = "localhost";
 
-            Console.WriteLine("Creating node");
+            Console.WriteLine("Creating node {0}", nodeId);
 
-            var node = DhtNodeFactory.NodeFactory.CreateNode(hostName, port);
+            var node = DhtNodeFactory.NodeFactory.CreateNode(nodeId, hostName, port);
 
             Console.WriteLine("Node created");
 

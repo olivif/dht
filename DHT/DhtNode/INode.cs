@@ -13,6 +13,11 @@ namespace DhtNode
     public interface INode
     {
         /// <summary>
+        /// The identifier of this node
+        /// </summary>
+        int NodeId { get; }
+
+        /// <summary>
         /// Receives a piece of content and stores it locally or relays 
         /// it to the correct node based on the hash key.
         /// </summary>

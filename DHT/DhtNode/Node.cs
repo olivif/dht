@@ -13,6 +13,18 @@ namespace DhtNode
     public class Node : INode
     {
         /// <inheritdoc />
+        public int NodeId { get; private set; }
+
+        /// <summary>
+        /// Constructs a node using a given id
+        /// </summary>
+        /// <param name="nodeId">The id of the node</param>
+        public Node(int nodeId)
+        {
+            this.NodeId = nodeId;
+        }
+
+        /// <inheritdoc />
         public void ReceiveContent(string content)
         {
             Console.WriteLine("Got content {0}", content);
