@@ -47,10 +47,12 @@
     <Compile Include="Models\IData.cs" />
     <Compile Include="Hashing\IHasher.cs" />
     <Compile Include="Nodes\INode.cs" />
-    <Compile Include="Nodes\Node.cs" />
-    <Compile Include="Nodes\NodeFactory.cs" />
+    <Compile Include="Nodes\INodeService.cs" />
+    <Compile Include="Nodes\NodeService.cs" />
+    <Compile Include="Nodes\NodeServiceFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Routing\IRouter.cs" />
+    <Compile Include="Routing\Router.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

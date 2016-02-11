@@ -29,7 +29,7 @@ namespace DhtNode
 
             Console.WriteLine("Creating node {0}", nodeId);
 
-            var node = NodeFactory.CreateNode(nodeId, hostName, port);
+            var node = NodeServiceFactory.CreateNodeService(nodeId, hostName, port);
 
             Console.WriteLine("Node created");
 

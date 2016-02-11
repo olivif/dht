@@ -3,13 +3,11 @@
 /// </summary>
 namespace DHT.Nodes
 {
-    using System.ServiceModel;
-    using System.ServiceModel.Web;
+    using System;
 
     /// <summary>
-    /// Defines the interface for a node service
+    /// Defines the interface for a node in the system
     /// </summary>
-    [ServiceContract]
     public interface INode
     {
         /// <summary>
@@ -18,12 +16,8 @@ namespace DHT.Nodes
         int NodeId { get; }
 
         /// <summary>
-        /// Receives a piece of content and stores it locally or relays 
-        /// it to the correct node based on the hash key.
+        /// The endpoint this node can be reached on
         /// </summary>
-        /// <param name="content">The content to be stored</param>
-        [OperationContract]
-        [WebGet]
-        void ReceiveContent(string content);
+        Uri Endpoint { get; }
     }
 }
