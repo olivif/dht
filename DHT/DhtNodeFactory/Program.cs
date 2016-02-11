@@ -3,8 +3,8 @@
 /// </summary>
 namespace DhtNode
 {
+    using DHT.Nodes;
     using System;
-    using System.ServiceModel.Web;
 
     class Program
     {
@@ -29,7 +29,7 @@ namespace DhtNode
 
             Console.WriteLine("Creating node {0}", nodeId);
 
-            var node = DhtNodeFactory.NodeFactory.CreateNode(nodeId, hostName, port);
+            var node = NodeFactory.CreateNode(nodeId, hostName, port);
 
             Console.WriteLine("Node created");
 

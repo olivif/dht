@@ -44,7 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NodeFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -52,9 +51,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DhtNode\DhtNode.csproj">
-      <Project>{cff6afa6-9e43-4576-be92-2b3bb2f86ea9}</Project>
-      <Name>DhtNode</Name>
+    <ProjectReference Include="..\DHT\DhtCore.csproj">
+      <Project>{0f00fe6c-cc5a-450a-92db-33d7a1aa1edb}</Project>
+      <Name>DhtCore</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

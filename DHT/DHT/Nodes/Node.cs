@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// DHT 2016 
 /// </summary>
-namespace DhtNode
+namespace DHT.Nodes
 {
     using System;
     using System.ServiceModel;

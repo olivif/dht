@@ -1,9 +1,8 @@
 ﻿/// <summary>
 /// DHT 2016 
 /// </summary>
-namespace DhtNodeFactory
+namespace DHT.Nodes
 {
-    using DhtNode;
     using System;
     using System.ServiceModel.Web;
 
