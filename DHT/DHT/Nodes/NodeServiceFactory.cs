@@ -18,16 +18,13 @@ namespace DHT.Nodes
         /// <param name="hostName">Host name, like localhost</param>
         /// <param name="port">Port to run on</param>
         /// <returns>An instance of a dht node</returns>
-        public static INode CreateNodeService(int nodeId, string hostName, int port)
+        public static INodeService CreateNodeService(int nodeId, string hostName, int port)
         {
             var uriString = string.Format("http://{0}:{1}", hostName, port);
             var endpoint = new Uri(uriString);
 
             var nodeInstance = new NodeService(nodeId, endpoint);
-            using (WebServiceHost host = new WebServiceHost(
-                nodeInstance,
-                nodeInstance.Endpoint)
-                )
+            using (WebServiceHost host = new WebServiceHost(nodeInstance, endpoint))
             {
                 host.Open();
             }

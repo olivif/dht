@@ -3,6 +3,7 @@
 /// </summary>
 namespace DHT.Routing
 {
+    using Nodes;
     using Hashing;
     using System;
     using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace DHT.Routing
         private IHasher hasher;
 
         /// <inheritdoc />
-        public List<int> Nodes { get; private set; }
+        public List<INode> Nodes { get; private set; }
 
         /// <summary>
         /// Constructs a router object
@@ -32,9 +33,10 @@ namespace DHT.Routing
         }
 
         /// <inheritdoc />
-        public void RegisterNode(int nodeId)
+        public void RegisterNode(int nodeId, string endpoint)
         {
-            this.Nodes.Add(nodeId);
+            var node = new Node(nodeId, new Uri(endpoint));
+            this.Nodes.Add(node);
         }
 
         /// <inheritdoc />

@@ -10,8 +10,13 @@ namespace DHT.Nodes
     /// Defines the interface for a node service
     /// </summary>
     [ServiceContract]
-    public interface INodeService : INode
+    public interface INodeService
     {
+        /// <summary>
+        /// Contains a logical node object
+        /// </summary>
+        Node Node { get; }
+
         /// <summary>
         /// Receives a piece of content and stores it locally or relays 
         /// it to the correct node based on the hash key.
