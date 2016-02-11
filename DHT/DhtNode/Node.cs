@@ -4,10 +4,12 @@
 namespace DhtNode
 {
     using System;
+    using System.ServiceModel;
 
     /// <summary>
     /// An implementation of a node service
     /// </summary>
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
     public class Node : INode
     {
         /// <inheritdoc />

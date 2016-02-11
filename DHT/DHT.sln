@@ -7,7 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DhtCore", "DHT\DhtCore.cspr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DhtTests", "DHT.Tests\DhtTests.csproj", "{C0DF25D4-AC2C-4453-897F-351BFBB1D059}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DhtNode", "DhtNode\DhtNode.csproj", "{83EEF16C-0F94-4BBC-9E0A-50F0A2094BA3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DhtNodeFactory", "DhtNodeFactory\DhtNodeFactory.csproj", "{83EEF16C-0F94-4BBC-9E0A-50F0A2094BA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DhtNode", "DhtNode\DhtNode.csproj", "{CFF6AFA6-9E43-4576-BE92-2B3BB2F86EA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{83EEF16C-0F94-4BBC-9E0A-50F0A2094BA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83EEF16C-0F94-4BBC-9E0A-50F0A2094BA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83EEF16C-0F94-4BBC-9E0A-50F0A2094BA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFF6AFA6-9E43-4576-BE92-2B3BB2F86EA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFF6AFA6-9E43-4576-BE92-2B3BB2F86EA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFF6AFA6-9E43-4576-BE92-2B3BB2F86EA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFF6AFA6-9E43-4576-BE92-2B3BB2F86EA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
