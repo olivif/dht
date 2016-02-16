@@ -7,6 +7,7 @@ namespace DHT.Routing
     using Hashing;
     using System;
     using System.Collections.Generic;
+    using System.Linq;
 
     /// <summary>
     /// Implements the interface for routing over a network
@@ -30,11 +31,22 @@ namespace DHT.Routing
         public Router(IHasher hasher)
         {
             this.hasher = hasher;
+            this.Nodes = new List<Node>();
         }
 
         /// <inheritdoc />
         public void RegisterNode(int nodeId, string endpoint)
         {
+            if (this.Nodes.Any(currentNode => currentNode.NodeId.Equals(nodeId)))
+            {
+                throw new ArgumentException(String.Format("Node with id {0} already registered", nodeId));
+            }
+
+            if (this.Nodes.Any(currentNode => currentNode.Endpoint.Equals(endpoint)))
+            {
+                throw new ArgumentException(String.Format("Node running on {0} endpoint already registered", endpoint));
+            }
+
             var node = new Node(nodeId, new Uri(endpoint));
             this.Nodes.Add(node);
         }

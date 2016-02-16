@@ -56,6 +56,7 @@
     <Compile Include="NodeServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="HasherTests.cs" />
+    <Compile Include="RouterTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DHT\DhtCore.csproj">

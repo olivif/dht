@@ -1,10 +1,11 @@
-﻿using System;
-using DHT.Models;
-/// <summary>
+﻿/// <summary>
 /// DHT 2016 
 /// </summary>
 namespace DHT.Hashing
 {
+    using System;
+    using Models;
+    
     /// <summary>
     /// An implementation of a hasher which uses the values on a 
     /// circle as a key space.

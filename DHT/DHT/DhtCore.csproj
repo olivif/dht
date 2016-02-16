@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Hashing\BasicHasher.cs" />
     <Compile Include="Hashing\CircleHasher.cs" />
     <Compile Include="Models\Data.cs" />
     <Compile Include="Models\IData.cs" />
