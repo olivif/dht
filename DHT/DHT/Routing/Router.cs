@@ -21,7 +21,7 @@ namespace DHT.Routing
         private IHasher hasher;
 
         /// <inheritdoc />
-        public List<INode> Nodes { get; private set; }
+        public List<Node> Nodes { get; private set; }
 
         /// <summary>
         /// Constructs a router object

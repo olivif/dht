@@ -13,22 +13,28 @@ namespace DHT.Nodes
     public class NodeService : INodeService
     {
         /// <inheritdoc />
-        public Node Node { get; private set; }
+        public int NodeId { get; private set; }
 
         /// <summary>
         /// Constructs a node using a given id
         /// </summary>
         /// <param name="nodeId">The id of the node</param>
         /// <param name="endpoint">The endpoint this node can be reached on</param>
-        public NodeService(int nodeId, Uri endpoint)
+        public NodeService(int nodeId)
         {
-            this.Node = new Node(nodeId, endpoint);
+            this.NodeId = nodeId;
         }
 
         /// <inheritdoc />
         public void ReceiveContent(string content)
         {
             Console.WriteLine("Got content {0}", content);
+        }
+
+        /// <inheritdoc />
+        public void Ping()
+        {
+            Console.WriteLine("Pinged!");
         }
     }
 }

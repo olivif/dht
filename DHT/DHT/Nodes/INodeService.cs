@@ -13,9 +13,9 @@ namespace DHT.Nodes
     public interface INodeService
     {
         /// <summary>
-        /// Contains a logical node object
+        /// The identifier of this node
         /// </summary>
-        Node Node { get; }
+        int NodeId { get; }
 
         /// <summary>
         /// Receives a piece of content and stores it locally or relays 
@@ -25,5 +25,12 @@ namespace DHT.Nodes
         [OperationContract]
         [WebGet]
         void ReceiveContent(string content);
+
+        /// <summary>
+        /// Pings the node
+        /// </summary>
+        [OperationContract]
+        [WebGet]
+        void Ping();
     }
 }

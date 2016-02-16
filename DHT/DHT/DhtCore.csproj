@@ -46,7 +46,6 @@
     <Compile Include="Models\Data.cs" />
     <Compile Include="Models\IData.cs" />
     <Compile Include="Hashing\IHasher.cs" />
-    <Compile Include="Nodes\INode.cs" />
     <Compile Include="Nodes\INodeService.cs" />
     <Compile Include="Nodes\Node.cs" />
     <Compile Include="Nodes\NodeService.cs" />

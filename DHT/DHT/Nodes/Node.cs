@@ -8,7 +8,7 @@ namespace DHT.Nodes
     /// <summary>
     /// Represents the logical structure of a node in the system
     /// </summary>
-    public class Node : INode
+    public class Node
     {
         /// <inheritdoc />
         public int NodeId { get; private set; }

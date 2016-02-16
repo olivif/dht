@@ -23,7 +23,9 @@ namespace DHT.Nodes
             var uriString = string.Format("http://{0}:{1}", hostName, port);
             var endpoint = new Uri(uriString);
 
-            var nodeInstance = new NodeService(nodeId, endpoint);
+            // TODO Should ping the endpoint and check there is no node existing on that endpoint
+
+            var nodeInstance = new NodeService(nodeId);
             using (WebServiceHost host = new WebServiceHost(nodeInstance, endpoint))
             {
                 host.Open();

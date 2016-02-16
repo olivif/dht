@@ -17,7 +17,7 @@ namespace DHT.Routing
         /// <summary>
         /// Currently registered nodes in the system
         /// </summary>
-        List<INode> Nodes { get; }
+        List<Node> Nodes { get; }
 
         /// <summary>
         /// Registers a node
