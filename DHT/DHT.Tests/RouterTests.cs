@@ -10,6 +10,8 @@ namespace DHT.Tests
     {
         public static string FakeEndpoint = "https://localhost:1000";
 
+        public static Uri FakeEndpointUri = new Uri(FakeEndpoint);
+
         [TestMethod]
         public void CanCreateRouter()
         {
@@ -26,7 +28,7 @@ namespace DHT.Tests
             var router = new Router(basicHasher);
 
             var numberOfNodes = router.Nodes.Count;
-            router.RegisterNode(0, FakeEndpoint);
+            router.RegisterNode(0, FakeEndpointUri);
 
             Assert.AreEqual(numberOfNodes, 0);
             Assert.AreEqual(router.Nodes.Count, 1);
@@ -43,7 +45,7 @@ namespace DHT.Tests
 
             for (int nodeIdx = 0; nodeIdx < nodesToRegister; nodeIdx++)
             {
-                router.RegisterNode(nodeIdx, FakeEndpoint + nodeIdx);
+                router.RegisterNode(nodeIdx, new Uri(FakeEndpoint + nodeIdx));
             }
 
             Assert.AreEqual(numberOfNodes, 0);
@@ -57,8 +59,8 @@ namespace DHT.Tests
             var basicHasher = new BasicHasher();
             var router = new Router(basicHasher);
 
-            router.RegisterNode(0, FakeEndpoint + "1");
-            router.RegisterNode(0, FakeEndpoint + "2");
+            router.RegisterNode(0, new Uri(FakeEndpoint + "1"));
+            router.RegisterNode(0, new Uri(FakeEndpoint + "2"));
         }
 
         [TestMethod]
@@ -68,8 +70,8 @@ namespace DHT.Tests
             var basicHasher = new BasicHasher();
             var router = new Router(basicHasher);
 
-            router.RegisterNode(0, FakeEndpoint);
-            router.RegisterNode(1, FakeEndpoint);
+            router.RegisterNode(0, FakeEndpointUri);
+            router.RegisterNode(1, FakeEndpointUri);
         }
     }
 }

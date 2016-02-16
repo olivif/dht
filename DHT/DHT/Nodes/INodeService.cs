@@ -3,6 +3,7 @@
 /// </summary>
 namespace DHT.Nodes
 {
+    using System;
     using System.ServiceModel;
     using System.ServiceModel.Web;
 
@@ -16,6 +17,13 @@ namespace DHT.Nodes
         /// The identifier of this node
         /// </summary>
         int NodeId { get; }
+
+        /// <summary>
+        /// Gets the endpoint the service is running on
+        /// </summary>
+        [OperationContract]
+        [WebGet]
+        Uri GetEndpoint();
 
         /// <summary>
         /// Receives a piece of content and stores it locally or relays 

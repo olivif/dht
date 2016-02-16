@@ -26,6 +26,12 @@ namespace DHT.Nodes
         }
 
         /// <inheritdoc />
+        public Uri GetEndpoint()
+        {
+            return OperationContext.Current.EndpointDispatcher.EndpointAddress.Uri;
+        }
+
+        /// <inheritdoc />
         public void ReceiveContent(string content)
         {
             Console.WriteLine("Got content {0}", content);

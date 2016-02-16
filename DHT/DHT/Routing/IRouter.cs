@@ -4,6 +4,7 @@
 namespace DHT.Routing
 {
     using Nodes;
+    using System;
     using System.Collections.Generic;
     using System.ServiceModel;
     using System.ServiceModel.Web;
@@ -26,7 +27,7 @@ namespace DHT.Routing
         /// <param name="endpoint">Endpoint of the node</param>
         [OperationContract]
         [WebGet]
-        void RegisterNode(int nodeId, string endpoint);
+        void RegisterNode(int nodeId, Uri endpoint);
 
         /// <summary>
         /// Routes a piece of content to the correct DHT node
