@@ -7,5 +7,8 @@ install:
 
 script:
   - xbuild /p:Configuration=Release DHT.sln
-  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./DHT.Tests/bin/Release/DHT.Tests.dll
+  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./DHT.Tests/bin/Release/DHT.Tests.dll
+
+    
+    
 
