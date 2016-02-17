@@ -1,2 +1,11 @@
 language: csharp
 solution: DHT.sln
+
+install:
+  - nuget restore DHT.sln
+  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
+
+script:
+  - xbuild /p:Configuration=Release DHT.sln
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./DHT.Tests/bin/Release/DHT.Tests.dll
+
