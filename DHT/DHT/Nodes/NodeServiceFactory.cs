@@ -23,13 +23,21 @@ namespace DHT.Nodes
             var uriString = string.Format("http://{0}:{1}", hostName, port);
             var endpoint = new Uri(uriString);
 
-            // TODO Should ping the endpoint and check there is no node existing on that endpoint
+            return NodeServiceFactory.CreateNodeService(nodeId, endpoint);
+        }
 
+        /// <summary>
+        /// Creates a DHT node service
+        /// </summary>
+        /// <param name="nodeId">The id of the node</param>
+        /// <param name="endpoint">The endpoint to run on</param>
+        /// <returns></returns>
+        public static INodeService CreateNodeService(int nodeId, Uri endpoint)
+        {
+            // TODO Should ping the endpoint and check there is no node existing on that endpoint
             var nodeInstance = new NodeService(nodeId);
-            using (WebServiceHost host = new WebServiceHost(nodeInstance, endpoint))
-            {
-                host.Open();
-            }
+            var host = new WebServiceHost(nodeInstance, endpoint);
+            host.Open();
 
             return nodeInstance;
         }

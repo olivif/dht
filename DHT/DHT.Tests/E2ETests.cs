@@ -3,6 +3,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DHT.Routing;
 using DHT.Hashing;
 using DHT.Nodes;
+using System.Collections.Generic;
+using DHT.Tests.Utils;
+using System.Threading;
 
 namespace DHT.Tests
 {
@@ -12,22 +15,46 @@ namespace DHT.Tests
         public static string LocalHost = "localhost";
 
         [TestMethod]
-        [Ignore]
-        /// Test currently disabled due to access control permissions
-        /// when running from VsTest.
         public void CreateRouterAndRegisterNodes()
         {
             // Create router
             var basicHasher = new BasicHasher();
             var router = new Router(basicHasher);
 
-            // Create 2 nodes and register them
-            var nodeService1 = NodeServiceFactory.CreateNodeService(0, LocalHost, 1000);
-            router.RegisterNode(nodeService1.NodeId, nodeService1.GetEndpoint());
+            // Create a few nodes
+            var nodes = new List<Node>();
+            var nodesToCreate = 4;
+            var startPort = 8000;
+            for (int nodeId = 0; nodeId < nodesToCreate; nodeId++)
+            {
+                nodes.Add(new Node(nodeId, this.CreateEndpoint(LocalHost, startPort + nodeId)));
+            }
 
-            var nodeService2 = NodeServiceFactory.CreateNodeService(1, LocalHost, 1001);
-            router.RegisterNode(nodeService2.NodeId, nodeService2.GetEndpoint());
+            foreach (var node in nodes)
+            {
+                // Register endpoints with netsh to avoid permission errors
+                Netsh.RegisterEndpoint(node.Endpoint);
 
+                // Create node service
+                var nodeService = NodeServiceFactory.CreateNodeService(node.NodeId, node.Endpoint);
+
+                // Register with router
+                router.RegisterNode(node.NodeId, node.Endpoint);
+            }
+        }
+
+        /// <summary>
+        /// Creates the full endpoint from a host name and a port
+        /// </summary>
+        /// <param name="hostName">The host name</param>
+        /// <param name="port">The port number</param>
+        /// <returns>Full endpoint</returns>
+        private Uri CreateEndpoint(string hostName, int port)
+        {
+            var endpointString = string.Format("http://{0}:{1}", hostName, port);
+            var endpoint = new Uri(endpointString);
+
+            return endpoint;
         }
     }
 }

@@ -30,6 +30,14 @@ namespace DHT.Routing
         void RegisterNode(int nodeId, Uri endpoint);
 
         /// <summary>
+        /// Registers a node
+        /// </summary>
+        /// <param name="node"></param>
+        [OperationContract]
+        [WebGet]
+        void RegisterNode(Node node);
+
+        /// <summary>
         /// Routes a piece of content to the correct DHT node
         /// </summary>
         /// <param name="contents">The content to be sent</param>

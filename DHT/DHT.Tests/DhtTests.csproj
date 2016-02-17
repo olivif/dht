@@ -58,6 +58,7 @@
     <Compile Include="HasherTests.cs" />
     <Compile Include="RouterTests.cs" />
     <Compile Include="E2ETests.cs" />
+    <Compile Include="Utils\Netsh.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DHT\DhtCore.csproj">

@@ -37,17 +37,28 @@ namespace DHT.Routing
         /// <inheritdoc />
         public void RegisterNode(int nodeId, Uri endpoint)
         {
-            if (this.Nodes.Any(currentNode => currentNode.NodeId.Equals(nodeId)))
-            {
-                throw new ArgumentException(String.Format("Node with id {0} already registered", nodeId));
-            }
-
-            if (this.Nodes.Any(currentNode => currentNode.Endpoint.Equals(endpoint)))
-            {
-                throw new ArgumentException(String.Format("Node running on {0} endpoint already registered", endpoint));
-            }
-
             var node = new Node(nodeId, endpoint);
+            this.RegisterNode(node);
+        }
+
+        /// <inheritdoc />
+        public void RegisterNode(Node node)
+        {
+            if (node == null)
+            {
+                throw new ArgumentException("Node is null");
+            }
+
+            if (this.Nodes.Any(currentNode => currentNode.NodeId.Equals(node.NodeId)))
+            {
+                throw new ArgumentException(String.Format("Node with id {0} already registered", node.NodeId));
+            }
+
+            if (this.Nodes.Any(currentNode => currentNode.Endpoint.Equals(node.Endpoint)))
+            {
+                throw new ArgumentException(String.Format("Node running on {0} endpoint already registered", node.Endpoint));
+            }
+
             this.Nodes.Add(node);
         }
 
