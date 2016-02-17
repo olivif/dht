@@ -9,6 +9,12 @@ namespace DHT.Tests
     public class DataTests
     {
         [TestMethod]
+        public void Test()
+        {
+            Assert.IsTrue(false);
+        }
+
+        [TestMethod]
         public void CanCreateDataObjectWithContents()
         {
             var data = new Data("data");
