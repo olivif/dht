@@ -15,7 +15,7 @@ namespace DHT.Tests
         public static string LocalHost = "localhost";
 
         [TestMethod]
-        public void CreateRouterAndRegisterNodes()
+        public void E2E_CreateRouterAndRegisterNodes()
         {
             // Create router
             var basicHasher = new BasicHasher();

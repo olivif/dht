@@ -13,7 +13,7 @@ namespace DHT.Tests
         public static Uri FakeEndpointUri = new Uri(FakeEndpoint);
 
         [TestMethod]
-        public void CanCreateRouter()
+        public void Router_CanCreate()
         {
             var basicHasher = new BasicHasher();
             var router = new Router(basicHasher);
@@ -22,7 +22,7 @@ namespace DHT.Tests
         }
 
         [TestMethod]
-        public void CanRegisterNode()
+        public void Router_CanRegisterNode()
         {
             var basicHasher = new BasicHasher();
             var router = new Router(basicHasher);
@@ -35,7 +35,7 @@ namespace DHT.Tests
         }
 
         [TestMethod]
-        public void CanRegisterMultipleNodes()
+        public void Router_CanRegisterMultipleNodes()
         {
             var basicHasher = new BasicHasher();
             var router = new Router(basicHasher);
@@ -54,7 +54,7 @@ namespace DHT.Tests
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void CannotRegisterNodeWithSameId()
+        public void Router_CannotRegisterNodeWithSameId()
         {
             var basicHasher = new BasicHasher();
             var router = new Router(basicHasher);
@@ -65,7 +65,7 @@ namespace DHT.Tests
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void CannotRegisterNodeWithSameEndpoint()
+        public void Router_CannotRegisterNodeWithSameEndpoint()
         {
             var basicHasher = new BasicHasher();
             var router = new Router(basicHasher);

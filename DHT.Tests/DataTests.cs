@@ -15,21 +15,21 @@ namespace DHT.Tests
         }
 
         [TestMethod]
-        public void CanCreateDataObjectWithContents()
+        public void Data_CanCreateDataObjectWithContents()
         {
             var data = new Data("data");
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void CannotCreateDataObjectWithNullContents()
+        public void Data_CannotCreateDataObjectWithNullContents()
         {
             var data = new Data(null);
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void CannotCreateDataObjectWithEmptyContents()
+        public void Data_CannotCreateDataObjectWithEmptyContents()
         {
             var data = new Data(string.Empty);
         }

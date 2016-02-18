@@ -10,7 +10,7 @@ namespace DHT.Tests
         /// Can create a node service, no exceptions thrown
         /// </summary>
         [TestMethod]
-        public void CanCreateNodeService()
+        public void NodeService_CanCreate()
         {
             var nodeService = new NodeService(1);
 
@@ -21,7 +21,7 @@ namespace DHT.Tests
         /// Can retrieve the node id property and is set correctly
         /// </summary>
         [TestMethod]
-        public void CanRetrieveNodeId()
+        public void NodeService_CanRetrieveNodeId()
         {
             var nodeId = 1;
             var nodeService = new NodeService(nodeId);
@@ -33,7 +33,7 @@ namespace DHT.Tests
         /// Asserts service can be pinged
         /// </summary>
         [TestMethod]
-        public void CanBePinged()
+        public void NodeService_CanBePinged()
         {
             var nodeId = 1;
             var nodeService = new NodeService(nodeId);
@@ -42,7 +42,7 @@ namespace DHT.Tests
         }
 
         [TestMethod]
-        public void CanReceiveContent()
+        public void NodeService_CanReceiveContent()
         {
             // TODO
         }
